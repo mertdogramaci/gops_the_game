@@ -4,6 +4,7 @@ document.getElementById("deck_size_button").onclick = function() {
     
     if (deck_size > 10 || deck_size < 1) {
         document.getElementById("deck_size_error").style.display = "inline";
+        document.getElementById("main_deck").style.display = "none";
     } else {
         document.getElementById("deck_size_error").style.display = "none";
 
