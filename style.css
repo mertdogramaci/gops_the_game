@@ -21,7 +21,7 @@ img {
     text-align: center;
 }
 
-#selected_card, #player_side{
+#selected_card, #first_player_side, #second_player_side {
     text-align: center;
 }
 
@@ -29,7 +29,7 @@ footer, #title {
     text-align: center;
 }
 
-#player_side {
+#first_player_side, #second_player_side {
     display: none;
 }
 

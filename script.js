@@ -20,7 +20,6 @@ document.getElementById("deck_size_button").onclick = function() {
         document.getElementById("main_deck").style.display = "inline";
         document.getElementById("selected_card_title").style.display = "inline";
         document.getElementById("input_section").style.display = "none";
-        document.getElementById("player_side").style.display = "inline";
 
         let main_deck = [];
         let first_player_deck = [];
@@ -32,10 +31,7 @@ document.getElementById("deck_size_button").onclick = function() {
             second_player_deck.push(i);
         }
         
-        for (let i = 0; i < deck_size; i++) {
-            let x = turn(main_deck, first_player_deck, second_player_deck);
-            main_deck.splice(x[0], 1);
-        }
+        turn(main_deck, first_player_deck, second_player_deck);
     }
 }
 
@@ -58,16 +54,25 @@ function turn(main_deck, first_player_deck, second_player_deck) {
     document.getElementById("main_" + main_deck[x]).style.borderColor = "red";
     document.getElementById("main_" + main_deck[x]).style.borderWidth = "10px";
 
-    let first_step = first_player_turn();
-    let second_step;
+    let first_step = first_player_turn(first_player_deck);
+    let second_step = second_player_turn(second_player_deck);
 
-    let result = [x, first_step, second_step];
 
-    document.getElementById("main_" + main_deck[x]).style.display = "none";
+    /*document.getElementById("main_" + main_deck[x]).style.display = "none";
     document.getElementById("selected_main_" + main_deck[x]).style.display = "none";
-    return result;
+    return turn(main_deck, first_player_deck, second_player_deck);*/
 }
 
 function first_player_turn(first_player_deck) {
-    
+    document.getElementById("first_player_side").style.display = "inline";
+    for (const element of first_player_deck) {
+        document.getElementById("player_1_" + element).style.display = "inline";
+    }
+}
+
+function second_player_turn(second_player_deck) {
+    document.getElementById("second_player_side").style.display = "inline";
+    for (const element of second_player_deck) {
+        document.getElementById("player_2_" + element).style.display = "inline";
+    }
 }
