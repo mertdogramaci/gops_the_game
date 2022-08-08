@@ -17,6 +17,7 @@ document.getElementById("deck_size_button").onclick = function() {
 
     } else {
         document.getElementById("deck_size_error").style.display = "none";
+        document.getElementById("main_deck").style.display = "inline";
         document.getElementById("selected_card_title").style.display = "inline";
 
         for (let i = 1; i <= deck_size; i++) {
