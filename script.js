@@ -1,12 +1,19 @@
 document.getElementById("deck_size_button").onclick = function() {
-    let deck_size = document.getElementById("deck_size").value;
+
+    const deck_size = document.getElementById("deck_size").value;
+    
     if (deck_size > 10 || deck_size < 1) {
-        document.getElementById("deck_size_output").style.display = "none";
         document.getElementById("deck_size_error").style.display = "inline";
     } else {
         document.getElementById("deck_size_error").style.display = "none";
-        document.getElementById("deck_size_output").style.display = "inline";
-        document.getElementById("deck_size_output").innerHTML = deck_size;
+
+        const main_deck = [];
+
+        for (let i = 1; i <= deck_size; i++) {
+            main_deck.push(i);
+        }
+
+        document.getElementById("main_deck").innerHTML = main_deck;
     }
 }
 
