@@ -22,15 +22,20 @@ document.getElementById("deck_size_button").onclick = function() {
         document.getElementById("input_section").style.display = "none";
         document.getElementById("player_side").style.display = "inline";
 
+        let main_deck = [];
+        let first_player_deck = [];
+        let second_player_deck = [];
+
         for (let i = 1; i <= deck_size; i++) {
-            document.getElementById("main_" + i).style.display = "inline";
+            main_deck.push(i);
+            first_player_deck.push(i);
+            second_player_deck.push(i);
         }
         
-        let x = Math.floor((Math.random() * deck_size) + 1);
-        document.getElementById("selected_main_" + x).style.display = "inline";
-        document.getElementById("main_" + x).style.borderStyle = "solid";
-        document.getElementById("main_" + x).style.borderColor = "red";
-        document.getElementById("main_" + x).style.borderWidth = "10px";
+        for (let i = 0; i < deck_size; i++) {
+            turn(main_deck, first_player_deck, second_player_deck);
+            break;
+        }
     }
 }
 
@@ -41,3 +46,21 @@ input.addEventListener("keypress", function(event) {
     document.getElementById("deck_size_button").click();
   }
 });
+
+function turn(main_deck, first_player_deck, second_player_deck) {
+    for (const element of main_deck) {
+        document.getElementById("main_" + element).style.display = "inline";
+    }
+
+    let x = Math.floor((Math.random() * main_deck.length) + 1);
+    document.getElementById("selected_main_" + main_deck[x]).style.display = "inline";
+    document.getElementById("main_" + main_deck[x]).style.borderStyle = "solid";
+    document.getElementById("main_" + main_deck[x]).style.borderColor = "red";
+    document.getElementById("main_" + main_deck[x]).style.borderWidth = "10px";
+
+
+}
+
+function first_player_turn() {
+
+}
