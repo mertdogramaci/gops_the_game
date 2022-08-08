@@ -12,15 +12,30 @@ img {
 
 #main_deck {
     display: inline-block;
-    width: 70%;
+    width: 80%;
 }
 
 #selected_card {
     display: inline-block;
-    width: 30%;
+    width: 20%;
     text-align: center;
 }
 
 #selected_card, #player_side{
     text-align: center;
+}
+
+footer, #title {
+    text-align: center;
+}
+
+#player_side {
+    display: none;
+}
+
+#main_menu {
+    padding-left: 44%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    border-style: solid;
 }
