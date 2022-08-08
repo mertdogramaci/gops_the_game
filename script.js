@@ -33,8 +33,8 @@ document.getElementById("deck_size_button").onclick = function() {
         }
         
         for (let i = 0; i < deck_size; i++) {
-            turn(main_deck, first_player_deck, second_player_deck);
-            break;
+            let x = turn(main_deck, first_player_deck, second_player_deck);
+            main_deck.splice(x[0], 1);
         }
     }
 }
@@ -58,9 +58,16 @@ function turn(main_deck, first_player_deck, second_player_deck) {
     document.getElementById("main_" + main_deck[x]).style.borderColor = "red";
     document.getElementById("main_" + main_deck[x]).style.borderWidth = "10px";
 
+    let first_step = first_player_turn();
+    let second_step;
 
+    let result = [x, first_step, second_step];
+
+    document.getElementById("main_" + main_deck[x]).style.display = "none";
+    document.getElementById("selected_main_" + main_deck[x]).style.display = "none";
+    return result;
 }
 
-function first_player_turn() {
-
+function first_player_turn(first_player_deck) {
+    
 }
