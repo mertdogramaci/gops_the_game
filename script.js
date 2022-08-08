@@ -3,8 +3,12 @@ document.getElementById("deck_size_button").onclick = function() {
     const deck_size = document.getElementById("deck_size").value;
 
     for (let i = 1; i <= 10; i++) {
-        let image_path = "main_" + i;
-        document.getElementById(image_path).style.display = "none";
+        document.getElementById("main_" + i).style.display = "none";
+    }
+
+    for (let i = 1; i <= 10; i++) {
+        document.getElementById("selected_main_" + i).style.display = "none";
+        document.getElementById("main_" + i).style.border = "none";
     }
     
     if (deck_size > 10 || deck_size < 1) {
@@ -12,14 +16,16 @@ document.getElementById("deck_size_button").onclick = function() {
         document.getElementById("main_deck").style.display = "none";
     } else {
         document.getElementById("deck_size_error").style.display = "none";
-
-        const main_deck = [];
-        const main_deck_path = "card_images/spades/";
+        document.getElementById("selected_card_title").style.display = "inline";
 
         for (let i = 1; i <= deck_size; i++) {
-            let image_path = "main_" + i;
-            document.getElementById(image_path).style.display = "inline";
+            document.getElementById("main_" + i).style.display = "inline";
         }
+        let x = Math.floor((Math.random() * deck_size) + 1);
+        document.getElementById("selected_main_" + x).style.display = "inline";
+        document.getElementById("main_" + x).style.borderStyle = "solid";
+        document.getElementById("main_" + x).style.borderColor = "red";
+        document.getElementById("main_" + x).style.borderWidth = "10px";
     }
 }
 
