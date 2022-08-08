@@ -39,3 +39,7 @@ footer, #title {
     padding-bottom: .5%;
     border-style: solid;
 }
+
+.btn:hover {
+    border: 2px solid black;
+}
