@@ -1,16 +1,16 @@
 document.getElementById("deck_size_button").onclick = function() {
     const deck_size = document.getElementById("deck_size").value;
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 13; i++) {
         document.getElementById("main_" + i).style.display = "none";
     }
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 13; i++) {
         document.getElementById("selected_main_" + i).style.display = "none";
         document.getElementById("main_" + i).style.border = "none";
     }
     
-    if (deck_size > 10 || deck_size < 1) {
+    if (deck_size > 13 || deck_size < 1) {
         document.getElementById("deck_size_error").style.display = "inline";
         document.getElementById("main_deck").style.display = "none";
         document.getElementById("selected_card_title").style.display = "none";

@@ -9,3 +9,18 @@ img {
 #selected_card_title {
     display: none;
 }
+
+#main_deck {
+    display: inline-block;
+    width: 70%;
+}
+
+#selected_card {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+#selected_card, #player_side{
+    text-align: center;
+}
