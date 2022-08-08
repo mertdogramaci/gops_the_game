@@ -1,6 +1,11 @@
 document.getElementById("deck_size_button").onclick = function() {
 
     const deck_size = document.getElementById("deck_size").value;
+
+    for (let i = 1; i <= 10; i++) {
+        let image_path = "main_" + i;
+        document.getElementById(image_path).style.display = "none";
+    }
     
     if (deck_size > 10 || deck_size < 1) {
         document.getElementById("deck_size_error").style.display = "inline";
@@ -9,12 +14,12 @@ document.getElementById("deck_size_button").onclick = function() {
         document.getElementById("deck_size_error").style.display = "none";
 
         const main_deck = [];
+        const main_deck_path = "card_images/spades/";
 
         for (let i = 1; i <= deck_size; i++) {
-            main_deck.push(i);
+            let image_path = "main_" + i;
+            document.getElementById(image_path).style.display = "inline";
         }
-
-        document.getElementById("main_deck").innerHTML = main_deck;
     }
 }
 
